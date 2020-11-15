@@ -3,4 +3,4 @@ Welcome
 
 Blogs
 -----
-[First Blog](/First-Blog.md)
+[Haskell in CP](/CPHaskell)
