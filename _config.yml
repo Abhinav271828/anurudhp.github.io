@@ -4,4 +4,11 @@ title: null
 theme: jekyll-theme-primer
 markdown: kramdown
 kramdown:
-   math_engine: mathjax
+  math_engine: mathjax
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "page"
