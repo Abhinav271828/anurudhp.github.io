@@ -3,85 +3,27 @@
 
 @import "{{ site.theme }}";
 
-//  Typography
-// --------------------------------------------------
-
-/*  Vertical Rhythm
-	https://github.com/sturobson/Sassifaction
-*/
-
-@mixin font-size($size, $margin: yes, $line-height: $doc-line-height) {
-		
-	// generates the font-size in REMs with a PX fallback
-	font-size: 0px + $size;
-	font-size: 0rem + $size / $doc-font-size;
-
-	// line-height functions
-	////////////////////////
-
-	// if you a line-height is specified in the mixin
-	@if $line-height != $doc-line-height and $line-height != 1 {
-		line-height: ceil($size / $line-height) * ($line-height / $size);
-	}
-	
-	// if $line-height == 1
-	// because, typing 1 is quicker than 16
-	@else if $line-height == 1 {
-		line-height: 1;
-	}
-
-	// normal $line-height
-	// if the line-height is left.
-	@else {
-		line-height: ceil($size / $doc-line-height) * ($doc-line-height / $size);
-	}
-
-	// margin-bottom functions
-	//////////////////////////
-
-	// if no is bottom margin is required
-	@if $margin == no {
-		margin-bottom: 0;  
-	}  
-	
-	// if a specific bottom margin is required
-	@else if $margin != yes and $margin != no {
-		margin-bottom: 0px + $margin;
-		margin-bottom: 0rem + ($margin / $doc-font-size);  
-	}
-
-	// if you're keeping the vertical rhythm with the margin
-	@else {
-		margin-bottom: 0px + $doc-line-height;
-		margin-bottom: 0rem + ($doc-line-height / $doc-font-size);  
-	}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  ul {
+    text-align: center;
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+    li {
+      display: inline;
+      font-size: 17px;
+      a {
+        color: #000000;
+        text-decoration: none;
+        padding: 14px;
+        &:hover {
+          background-color: #111;
+        }
+      }
+    }
+  }
 }
-
-.top-menu {
-	display: none;
-	position: relative;
-// 	@include media($medium) {
-// 		@include span-columns(12);
-// 	}
-// 	@include media($large) {
-// 		@include span-columns(7);
-// 		ul {
-// 			position: absolute;
-// 			right: 0;
-// 		}
-//	}
-	.home,
-	.sub-menu-item {
-		display: none;
-	}
-	li {
-		a {
-			font-weight: 700;
-			@include font-size(16,no);
-			line-height: .5 * $masthead-height; // half the height to center vertically
-			color: $black;
-			text-transform: uppercase;
-		}
-	}
-}
-
