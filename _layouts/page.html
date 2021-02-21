@@ -1,6 +1,24 @@
 ---
 layout: default
 ---
+<header id="masthead">
+  <div class="inner-wrap">
+    <a href="/" class="site-title"><img src="/images/{{ site.logo }}"/></a>
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+        <li class="home"><a href="/">Anurudh Peduri</a></li>
+        {% for link in site.data.navigation %}
+          {% if link.url contains 'http' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = site.url %}
+          {% endif %}
+          <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div><!-- /.inner-wrap -->
+</header><!-- /.masthead -->
 
 {{ content }}
 

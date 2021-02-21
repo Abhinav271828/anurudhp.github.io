@@ -12,3 +12,5 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "page"
+
+exclude: ["README.md", "scripts", "Makefile"]
