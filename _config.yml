@@ -13,4 +13,7 @@ defaults:
     values:
       layout: "page"
 
+gems:
+  - neat
+
 exclude: ["README.md", "scripts", "Makefile"]
