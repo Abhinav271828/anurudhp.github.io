@@ -1,5 +1,4 @@
 name: anurudhp.github.io
 title: null
 
-# markdown: CommonMarkGhPages
-remote_theme: mmistakes/jekyll-theme-skinny-bones
+markdown: CommonMarkGhPages
