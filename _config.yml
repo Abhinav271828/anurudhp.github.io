@@ -1,4 +1,7 @@
 name: anurudhp.github.io
 title: null
 
-markdown: CommonMarkGhPages
+theme: jekyll-theme-primer
+markdown: kramdown
+kramdown:
+   math_engine: mathjax
