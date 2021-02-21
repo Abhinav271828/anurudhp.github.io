@@ -11,7 +11,7 @@ This week I will be discussing a couple of basic problems.
 
 Let us first pull up some basic imports.
 
-``` {.haskell .literate}
+``` haskell
 import Control.Arrow ((>>>))
 import Data.List (group, sort)
 ```
@@ -22,7 +22,7 @@ This problem asks for the longest substring of equal characters.
 Usually, we iterate through the string keeping a running counter, and
 reset it whenever the character changes.
 
-``` {.haskell .literate}
+``` haskell
 solveA1 :: String -> Int
 solveA1 s = maximum groupLengths
   where
@@ -32,7 +32,7 @@ solveA1 s = maximum groupLengths
 
 But notice that we can chain the functions and reduce this code.
 
-``` {.haskell .literate}
+``` haskell
 solveA :: String -> Int
 solveA = maximum . map length . group
 ```
@@ -40,7 +40,7 @@ solveA = maximum . map length . group
 And finally the main function - take the first line as a string and pass
 it to solve.
 
-``` {.haskell .literate}
+``` haskell
 mainA :: IO ()
 mainA = interact $ lines >>> head >>> solveA >>> show
 ```
@@ -61,7 +61,7 @@ number, we only need to check for factors up to its square root. The
 others will be the number divided by one of the small factors already
 computed.
 
-``` {.haskell .literate}
+``` haskell
 factors :: Int -> [Int]
 factors n = smallFacs ++ (reverse largeFacs) -- reverse to get ascending order
   where
@@ -72,7 +72,7 @@ factors n = smallFacs ++ (reverse largeFacs) -- reverse to get ascending order
 
 We can compress this in a more haskell-ey way as:
 
-``` {.haskell .literate}
+``` haskell
 factors' :: Int -> [Int]
 factors' n =
   sort .
@@ -85,7 +85,7 @@ factors' n =
 We need to write a function which gives the largest factor of a number
 that divides at least $n - 1$ elements in the array.
 
-``` {.haskell .literate}
+``` haskell
 bestCD :: [Int] -> Int -> Int
 bestCD xs = last . filter hasEnough . factors'
   where
@@ -95,12 +95,12 @@ bestCD xs = last . filter hasEnough . factors'
 
 And finally the full solution:
 
-``` {.haskell .literate}
+``` haskell
 solveB :: [Int] -> Int
 solveB xs = max (bestCD xs (xs !! 0)) (bestCD xs (xs !! 1))
 ```
 
-``` {.haskell .literate}
+``` haskell
 mainB :: IO ()
 mainB = interact $ words >>> drop 1 >>> map read >>> solveB >>> show
 ```

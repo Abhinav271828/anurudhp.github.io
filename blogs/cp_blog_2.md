@@ -52,7 +52,7 @@ coin $x_i$.
 
 Let us start with the basic outline:
 
-``` {.haskell .literate}
+``` haskell
 {-# LANGUAGE ParallelListComp #-}
 import Control.Arrow ((>>>))
 
@@ -75,7 +75,7 @@ just makes it easier to read.
 
 Here is an example.
 
-``` {.haskell .literate}
+``` haskell
 zipAdd' :: [Int] -> [Int] -> [Int]
 zipAdd' xs ys = [ x + y | x <- xs | y <- ys ]
 ```
@@ -96,7 +96,7 @@ and `dp[s - x]`. Define `dpx[s] = dp[s - x]` by just prepending `False`
 Now we get `dp'[s] = dp[s] || dpx[s]`. This is computed by directly
 zipping them with `||`.
 
-``` {.haskell .literate}
+``` haskell
 next :: [Bool] -> Int -> [Bool]
 next dp x = [ p || p' | p <- dp | p' <- dpx ]
   where
@@ -124,7 +124,7 @@ ghci> take 8 (zip [0..] dp2)
 Finally just apply the updates sequentially on the initial DP state:
 $$D_0 \equiv \{\texttt{true}, \texttt{false}, \texttt{false}, \ldots\}$$.
 
-``` {.haskell .literate}
+``` haskell
 solve :: [Int] -> [Int]
 solve xs = dpIxsTrue
   where

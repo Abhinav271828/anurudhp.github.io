@@ -8,9 +8,6 @@ fi
 input=$1
 output=$2
 
-# log
-echo -n "Compiling $input to $output... "
-
 # create empty file
 echo -n "" > $output
 
@@ -24,6 +21,8 @@ pandoc --from markdown+lhs --to markdown $input >> $output
 # fix code tags
 sed -i "s/sourceCode literate haskell/haskell/g" $output
 sed -i 's#{.sourceCode .literate .haskell}#haskell#g' $output
+sed -i 's#{.haskell .literate}#haskell#g' $output
+sed -i 's#{.literate .haskell}#haskell#g' $output
 sed -i 's#{.haskell}#haskell#g' $output
 sed -i 's/^\\#\\#\\#/###/g' $output
 

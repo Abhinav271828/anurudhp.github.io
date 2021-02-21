@@ -14,7 +14,7 @@ Yorgey](https://byorgey.wordpress.com/). First have a look at [this
 blog](https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/)
 for the basic template we'll be using.
 
-``` {.haskell .literate}
+``` haskell
 {-# LANGUAGE ParallelListComp #-}
 import Control.Arrow -- for >>>
 ```
@@ -48,7 +48,7 @@ basically pick the ones which have $$V_i > C_i$$.
 
 Let us parse the input.
 
-``` {.haskell .literate}
+``` haskell
 main = interact process
 process :: String -> String
 process =
@@ -77,7 +77,7 @@ using a `zipWith`
 map f (zip xs ys) = zipWith f' xs ys
 ```
 
-``` {.haskell .literate}
+``` haskell
 solve2 [vs, cs] = sum contribs
   where
     contrib' v c = max 0 (v - c)
@@ -87,7 +87,7 @@ solve2 [vs, cs] = sum contribs
 We can further simplify this by first computing the differences, then
 filtering out the negative ones.
 
-``` {.haskell .literate}
+``` haskell
 solve3 [vs, cs] = sum contribs
   where
     contrib' v c = v - c
@@ -96,7 +96,7 @@ solve3 [vs, cs] = sum contribs
 
 Notice that `contrib'` is exactly the subtraction operator `(-)`!
 
-``` {.haskell .literate}
+``` haskell
 solve4 [vs, cs] = sum contribs
   where
     contribs = filter (> 0) (zipWith (-) vs cs)
@@ -104,7 +104,7 @@ solve4 [vs, cs] = sum contribs
 
 Finally, the shortest code I could write:
 
-``` {.haskell .literate}
+``` haskell
 solve [vs, cs] = sum . filter (> 0) $ zipWith (-) vs cs
 
 -- or, can use list comprehension
