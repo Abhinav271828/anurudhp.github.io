@@ -26,7 +26,7 @@ There are also a few basic problems at the end of the above blog. I recommend yo
 
 Literate Haskell
 ----------------
-This entire blog post is a haskell file! You can find the link at the bottom, named _literate haskell source_. You can download the file and run it directy using `runhaskell`.
+This entire blog post is a haskell file! [You can find the file here](https://github.com/anurudhp/anurudhp.github.io/blob/master/blogs/cp_blog_1.lhs). You can download the file and run it directy using `runhaskell`.
 
 Warmup
 ------

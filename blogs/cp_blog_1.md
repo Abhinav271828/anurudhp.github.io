@@ -30,9 +30,9 @@ I am presenting.
 
 ## Literate Haskell
 
-This entire blog post is a haskell file! You can find the link at the
-bottom, named *literate haskell source*. You can download the file and
-run it directy using `runhaskell`.
+This entire blog post is a haskell file! [You can find the file
+here](https://github.com/anurudhp/anurudhp.github.io/blob/master/blogs/cp_blog_1.lhs).
+You can download the file and run it directy using `runhaskell`.
 
 ## Warmup
 
