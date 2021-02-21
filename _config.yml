@@ -1,6 +1,8 @@
 name: anurudhp.github.io
 title: null
 
+home_title: Anurudh Peduri
+
 theme: jekyll-theme-primer
 markdown: kramdown
 kramdown:
@@ -13,7 +15,7 @@ defaults:
     values:
       layout: "page"
 
-plugins:
-  - neat
+header_pages:
+  - blogs/index.md
 
 exclude: ["README.md", "scripts", "Makefile"]
