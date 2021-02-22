@@ -18,4 +18,8 @@ defaults:
 header_pages:
   - blogs/index.md
 
-exclude: ["README.md", "scripts", "Makefile"]
+exclude:
+  - README.md
+  - scripts
+  - Makefile
+  - .vs

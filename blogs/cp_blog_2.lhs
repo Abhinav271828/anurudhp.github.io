@@ -1,11 +1,9 @@
 ---
 layout: blog
-title: Knapsack DP reinvented
-created: 13/11/2020
-index: 2
+created: 2020-11-13
 ---
 
-Knapsack DP reinvented
+[Haskell for CP] Knapsack DP reinvented
 ======================
 
 Here is the problem [Money Sums](https://cses.fi/problemset/task/1745/) that I shared in my [last blog](cp_blog_1.html)

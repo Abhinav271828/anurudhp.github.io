@@ -1,23 +1,39 @@
 ---
 layout: default
 ---
-<header class="site-header">
-  <nav class="flexbox">
-    <a href="#">Home</a> 
-    <ul class="fullwidth">
-      <li><a href="#">LINK_1</a></li>
-      <li><a href="#">LINK_2</a></li>
-      <li><a href="#">LINK_3</a></li>
-    </ul>
-  </nav>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+
+<header id="nav-menu">
+  <div class="row">
+    <div class="col-xs">
+      <div class="box">
+        <a href="/">{{ site.home_title | upcase }}</a>
+      </div>
+    </div>
+    <div class="col-xs">
+      <div class="row end-xs">
+        {% for path in site.header_pages %}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          <div class="col-xs">
+            <div class="box">
+              <a href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase }}</a></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </header>
 
 {{ content }}
 
 <div class="footer border-top border-gray-light mt-5 pt-3 text-center text-gray">
-  <a href="/">Website Home</a>
-  <b>|</b>
-  <a href="{{ site.github.repository_url }}" target="_blank">Repository</a>
-  <b>|</b>
-  Published with <a href="https://pages.github.com">GitHub Pages</a>
+  <div class="row center-xs">
+  <p>&#169; {{ site.time | date: '%Y' }} Anurudh Peduri</p>
+  <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="https://pages.github.com/">Github Pages</a></p>
+  <p>
+    <a href="/feed.xml" class="footer-links" target="_blank"><img src="https://unpkg.com/simple-icons@4.12.0/icons/rss.svg"/></a>
+    <a href="http://github.com/anurudhp" class="footer-links" target="_blank"><img src="https://unpkg.com/simple-icons@4.12.0/icons/github.svg"/></a>
+  </p>
+  </div>
 </div>

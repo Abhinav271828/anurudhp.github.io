@@ -1,11 +1,10 @@
 ---
 layout: blog
-title: Some Basic Problems
-created: 27/11/2020
-index: 3
+title: \[Haskell for CP\] Some Basic Problems
+created: 2020-11-27
 ---
 
-# Some Basic Problems
+# \[Haskell for CP\] Some Basic Problems
 
 This week I will be discussing a couple of basic problems.
 

@@ -1,1 +1,6 @@
 .vs
+
+# ruby/jekyll
+Gemfile
+Gemfile.lock
+_site

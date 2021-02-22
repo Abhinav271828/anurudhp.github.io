@@ -3,3 +3,52 @@
 
 @import "{{ site.theme }}";
 
+.blog-index li > p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+// Links
+a {
+  color: #1772d0;
+  text-decoration: none;
+  &:focus, &:hover {
+    color: #f09228;
+  }
+}
+
+// Navigation Menu
+#nav-menu {
+  font-size: 22px;
+  padding-bottom: 25px
+  margin-bottom: 25px;
+  a {
+    color: #212121;
+    font-weight: 700;
+    &:focus, &:hover {
+      color: #f09228;
+      text-decoration: none;
+    }
+  }
+}
+
+// Footer Menu
+.footer .row {
+  p {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    border-right: solid;
+    border-width: 2px;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  img {
+    height: 1em;
+  }
+  .footer-links {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+}
+

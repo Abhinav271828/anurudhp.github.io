@@ -1,11 +1,9 @@
 ---
 layout: blog
-title: Introduction and our first problem
-created: 30/10/2020
-index: 1
+created: 2020-10-30
 ---
 
-Introduction and our first problem
+[Haskell for CP] Introduction and our first problem
 ==================================
 
 Basic Setup
