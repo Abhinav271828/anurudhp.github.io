@@ -1,0 +1,20 @@
+<div class="nav-menu-holder">
+  <div class="container-lg px-3 my-3">
+    <header id="nav-menu">
+      <div class="row between-xs">
+        <div class="col-xs">
+          <div class="box">
+            <a href="/">{{ site.home_title | upcase }}</a>
+          </div>
+        </div>
+        <div class="col-xs">
+          <div class="box">
+            {% for page_info in site.data.nav %}
+            <a href="{{ page_info.url | relative_url }}" class="nav-item">{{ page_info.title | upcase }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
