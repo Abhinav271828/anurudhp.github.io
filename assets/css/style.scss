@@ -30,6 +30,9 @@ a {
 #nav-menu {
   font-size: 22px;
   margin-bottom: 25px;
+  .nav-item {
+    margin-left: 5%;
+  }
   a {
     color: #616161;
     font-weight: 700;
