@@ -15,9 +15,6 @@ defaults:
     values:
       layout: "page"
 
-header_pages:
-  - blogs/index.md
-
 exclude:
   - README.md
   - scripts

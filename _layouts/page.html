@@ -12,12 +12,11 @@ layout: default
       </div>
     </div>
     <div class="col-xs">
-      <div class="row end-xs">
-        {% for path in site.header_pages %}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          <div class="col-xs">
+      <div class="row center-xs">
+        {% for page_info in site.data.nav %}
+          <div class="col-xs-3">
             <div class="box">
-              <a href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase }}</a></div>
+              <a href="{{ page_info.url | relative_url }}">{{ page_info.title | upcase }}</a></div>
           </div>
         {% endfor %}
       </div>
