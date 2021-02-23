@@ -1,7 +1,7 @@
 # All
-all: haskell_blogs
+all: haskell_blogs feed.xml
 
-# Haskell Blogs from LHS
+### Haskell Blogs from LHS
 LITERATE_HASKELL_SRCS := $(wildcard blogs/*.lhs)
 LITERATE_HASKELL_STUBS := $(patsubst %.lhs,%,$(LITERATE_HASKELL_SRCS))
 LITERATE_HASKELL_BLOGS := $(patsubst %.lhs,%.md,$(LITERATE_HASKELL_SRCS))
@@ -12,3 +12,8 @@ $(LITERATE_HASKELL_BLOGS): %.md: %.lhs scripts/lhs_to_md.sh scripts/getYAMLMetad
 	./scripts/lhs_to_md.sh $< $@
 
 .PHONY: haskell_blogs
+
+### RSS Feed
+BLOG_SRCS := $(wildcard blogs/*.md)
+feed.xml: $(BLOG_SRCS)
+	python ./scripts/genrss.py -b blogs -o $@
