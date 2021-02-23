@@ -7,34 +7,39 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Feb 2021 02:52:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Feb 2021 03:00:09 +0000</lastBuildDate>
     <item>
       <title>Solving a functional equation using Lean</title>
       <link>https://anurudhp.github.io/blogs/lean-functional-equation-proof.html</link>
+      <author>Anurudh Peduri</author>
       <guid isPermaLink="false">https://anurudhp.github.io/blogs/lean-functional-equation-proof.html</guid>
       <pubDate>Mon, 22 Feb 2021 00:00:00 +0530</pubDate>
     </item>
     <item>
       <title>Awesome Software/Tools for Programming</title>
       <link>https://anurudhp.github.io/blogs/awesome-tools.html</link>
+      <author>Anurudh Peduri</author>
       <guid isPermaLink="false">https://anurudhp.github.io/blogs/awesome-tools.html</guid>
       <pubDate>Tue, 01 Dec 2020 00:00:00 +0530</pubDate>
     </item>
     <item>
       <title>[Haskell for CP] Introduction and our first problem</title>
       <link>https://anurudhp.github.io/blogs/haskell-cp-introduction.html</link>
+      <author>Anurudh Peduri</author>
       <guid isPermaLink="false">https://anurudhp.github.io/blogs/haskell-cp-introduction.html</guid>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0530</pubDate>
     </item>
     <item>
       <title>[Haskell for CP] Knapsack DP reinvented</title>
       <link>https://anurudhp.github.io/blogs/haskell-knapsack-dp.html</link>
+      <author>Anurudh Peduri</author>
       <guid isPermaLink="false">https://anurudhp.github.io/blogs/haskell-knapsack-dp.html</guid>
       <pubDate>Fri, 13 Nov 2020 00:00:00 +0530</pubDate>
     </item>
     <item>
       <title>[Haskell for CP] Some Basic Problems</title>
       <link>https://anurudhp.github.io/blogs/haskell-cp-misc-problems.html</link>
+      <author>Anurudh Peduri</author>
       <guid isPermaLink="false">https://anurudhp.github.io/blogs/haskell-cp-misc-problems.html</guid>
       <pubDate>Fri, 27 Nov 2020 00:00:00 +0530</pubDate>
     </item>

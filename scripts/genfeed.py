@@ -29,6 +29,7 @@ def make_feed(feed: FeedGenerator, blogs: [PosixPath]):
             entry.link(href=loc)
             pubDate = sh.date('-R', '-d', metadata['created']).strip()
             entry.pubDate(pubDate)
+            entry.author(email='Anurudh Peduri')
 
 def read_metadata(src: PosixPath):
     try:
