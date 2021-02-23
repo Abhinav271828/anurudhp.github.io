@@ -15,7 +15,9 @@ Definitions
 
 ### [Nim Game](https://en.wikipedia.org/wiki/Nim)
 There are a set of piles. Each pile could be a stack of coins or a [tree](https://en.wikipedia.org/wiki/Tree_(graph_theory)) etc.  
-Two players play a game - in a move a player chooses a particular pile and removes some number of coins or nodes. The exact game will define which moves are allowed.
+Two players play a game - in a move a player chooses a particular pile and removes some number of coins or nodes. The exact game will define which moves are allowed. The player who cannot play a move loses.
+
+Assuming both players play optimally, we want to find who wins a game.
 
 ### Solving a single pile
 We assign each state of a pile a non-negative integer value - called its _grundy number_. A losing state will have a grundy number of 0, and winning states will have a non-zero value.
