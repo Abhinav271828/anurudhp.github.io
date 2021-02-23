@@ -23,7 +23,7 @@ def make_feed(feed: FeedGenerator, blogs: [PosixPath]):
         if metadata is not None:
             logging.info(f'Adding: {metadata["title"]}')
             entry = feed.add_entry()
-            loc = SITE_PATH+str(blog)
+            loc = SITE_PATH+str(blog).replace('.md', '.html')
             entry.id(loc)
             entry.title(metadata['title'])
             entry.link(href=loc)

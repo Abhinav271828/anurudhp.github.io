@@ -15,5 +15,5 @@ $(LITERATE_HASKELL_BLOGS): %.md: %.lhs scripts/lhs_to_md.sh scripts/getYAMLMetad
 
 ### RSS Feed
 BLOG_SRCS := $(wildcard blogs/*.md)
-feed.rss: $(BLOG_SRCS)
-	python ./scripts/genrss.py -b blogs -o $@
+feed.rss: $(BLOG_SRCS) ./scripts/genfeed.py
+	python ./scripts/genfeed.py -b blogs -o $@
