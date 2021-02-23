@@ -61,8 +61,8 @@ def read_metadata(src: PosixPath):
 def main():
     parser = argparse.ArgumentParser(description='Site RSS feed generator')
     parser.add_argument('-b', metavar='blogs_dir', help='Directory containing blogs', required=True, dest='blogs_dir')
-    parser.add_argument('-o', metavar='rss_file', help='Output file (defaults to ./feed.xml)', default='feed.xml', dest='output')
-    parser.add_argument('-a', metavar='atom_file', help='Output file (defaults to ./feed.xml)', dest='atom_output')
+    parser.add_argument('-o', metavar='rss_file', help='Output file (defaults to ./feed.rss)', default='feed.rss', dest='output')
+    parser.add_argument('-a', metavar='atom_file', help='Atom Feed Output file', dest='atom_output')
     parser.add_argument('-v', action='store_true', help='verbose mode, show info/warnings')
     args = parser.parse_args()
 
