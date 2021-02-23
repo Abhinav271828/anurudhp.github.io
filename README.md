@@ -6,5 +6,3 @@ Some theme elements taken from [meghprkh.github.io](https://github.com/meghprkh/
 TODO
 ----
 
-- Add RSS feed
-
