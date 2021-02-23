@@ -52,6 +52,8 @@ def read_metadata(src: PosixPath):
 
         metadata = yaml.safe_load(yml_front)
         if metadata['layout'] != 'blog': return None
+        title = title.replace("\\[", "[")
+        title = title.replace("\\]", "]")
         metadata['title'] = title
         return metadata
     except Exception as e:
