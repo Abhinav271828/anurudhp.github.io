@@ -100,5 +100,5 @@ Next Problem
 ------------
 Here's the first problem I'll be discussing: [Money Sums](https://cses.fi/problemset/task/1745/) from [cses.fi](https://cses.fi/). It is a very standard knapsack problem, but try to solve it using haskell. I'll post the solution next to next Friday which is 13th November, 2020.
 
-Feel free to discuss in the disqus comments at the end of this page.
+Feel free to discuss in the comments at the end of this page.
 

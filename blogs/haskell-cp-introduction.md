@@ -119,4 +119,4 @@ Sums](https://cses.fi/problemset/task/1745/) from
 try to solve it using haskell. I'll post the solution next to next
 Friday which is 13th November, 2020.
 
-Feel free to discuss in the disqus comments at the end of this page.
+Feel free to discuss in the comments at the end of this page.

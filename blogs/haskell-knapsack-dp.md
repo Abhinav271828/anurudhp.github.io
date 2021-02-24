@@ -6,7 +6,7 @@ created: 2020-11-13
 # \[Haskell for CP\] Knapsack DP reinvented
 
 Here is the problem [Money Sums](https://cses.fi/problemset/task/1745/)
-that I shared in my [last blog](cp_blog_1.html)
+that I shared in my [last blog](./haskell-cp-introduction.html)
 
 You have $n$ coins, with values $x_1, x_2 \ldots x_n$. You have to find
 all possible totals you can form with them.
