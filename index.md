@@ -1,4 +1,10 @@
-<div class="row box">
+I am a Computer Science student at [IIIT Hyderabad](https://www.iiit.ac.in/). I am pursuing my Masters at the _Center for Security Theory and Algorithms Research_ under the guidance of Prof. Kannan Srinathan. I am currently working on Compilers Research in collaboration with [Tobias Grosser](https://grosser.science/) from the [University of Edinburgh](https://www.ed.ac.uk/). My other research interests are Quantum Computing, Cryptography, Graph Theory, Formal Verification and Automated Theorem Proving.
+
+I love programming and math. I started competitive programming in 2013, and regularly participate in contests on [Codeforces](https://codeforces.com/profile/codelegend) and [AtCoder](https://atcoder.jp/users/codelegend). I also co-founded the [Theory Group at IIIT-H](http://iiittheorygroup.github.io/) and am super enthusiastic to explore and learn theory.
+
+I follow three sports - Football, Formula-1 and Chess. I also used to be a [speedcuber](https://www.worldcubeassociation.org/persons/2012REDD01) with an official fastest solve of 16.60 seconds.
+
+<div class="row middle-xs border border-black-fade bg-blue-light rounded-2">
 <div class="col-xs-12 col-md-3" style="text-align: center">
 <img src="https://math.jhu.edu/~savitt/GTM/massey.jpg" width="80%" alt="" style="max-width: 200px;">
 </div>
