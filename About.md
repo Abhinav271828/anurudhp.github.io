@@ -1,3 +1,7 @@
+---
+title: Interests
+---
+
 I love programming and math. I started competitive programming in 2013, and regularly participate in contests on [Codeforces](https://codeforces.com/profile/codelegend) and [AtCoder](https://atcoder.jp/users/codelegend). I co-founded the [Theory Group at IIIT-H](http://iiittheorygroup.github.io/) and am super enthusiastic to explore and learn theory.
 
 Hobbies
