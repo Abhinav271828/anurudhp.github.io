@@ -1,16 +1,20 @@
 <div class="nav-menu-holder">
   <div class="container-lg px-3 my-3">
     <header id="nav-menu">
-      <div class="row between-xs">
-        <div class="col-xs">
+      <div class="row center-xs start-sm">
+        <div class="col-xs-12 col-sm-7">
           <div class="box">
             <a href="/">{{ site.home_title | upcase }}</a>
           </div>
         </div>
-        <div class="col-xs end-xs">
-          <div class="box">
+        <div class="col-xs-12 col-sm-5">
+          <div class="row around-xs around-sm">
             {% for page_info in site.data.nav %}
-            <a href="{{ page_info.url | relative_url }}" class="nav-item">{{ page_info.title}}</a>
+              <div class="col-xs col-sm-1">
+                <div class="box">
+                  <a href="{{ page_info.url | relative_url }}" class="nav-item">{{ page_info.title}}</a>
+                </div>
+              </div>
             {% endfor %}
           </div>
         </div>
