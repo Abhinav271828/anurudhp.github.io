@@ -17,3 +17,4 @@ exclude:
   - scripts
   - Makefile
   - .vs
+  - vendor
