@@ -2,6 +2,9 @@
 layout: blog_lhs
 created: 2021-05-12
 blog: true
+tags:
+  - haskell
+  - competitive programming
 ---
 
 [Haskell for CP] Exploiting laziness for memoized DPs

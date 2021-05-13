@@ -2,6 +2,9 @@
 layout: blog
 created: 2021-02-23
 blog: true
+tags:
+  - game-theory
+  - algebra
 ---
 
 Sprague-Grundy: Why is it XOR?
