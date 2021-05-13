@@ -69,3 +69,38 @@ a {
   }
 }
 
+/*** ScrollToTop Button for blogs ***/
+.scrollBtn {
+  a {
+    display: inline-block;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    position: fixed;
+    right: 30px;
+    svg {
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,.8));
+    }
+  }
+
+  #scrollToTopBtn {
+    bottom: 65px;
+  }
+  #scrollToBottomBtn {
+    bottom: 30px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  &:active {
+    background-color: #555;
+  }
+}
+
+.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
