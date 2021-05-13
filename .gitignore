@@ -6,3 +6,9 @@ Gemfile.lock
 _site
 .bundle
 vendor
+
+# haskell
+*.o
+*.hi
+*.out
+
