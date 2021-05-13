@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blog_lhs
 created: 2020-10-30
 ---
 
