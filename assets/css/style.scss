@@ -5,9 +5,14 @@
 
 // color scheme: https://www.materialui.co/colors
 
-.blog-index li > p {
-  margin-top: 0;
-  margin-bottom: 0;
+.blog-index li {
+  > p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  strong a {
+    font-size: $h3-size;
+  }
 }
 
 .markdown-body blockquote {

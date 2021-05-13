@@ -30,6 +30,19 @@ layout: page
 </a></div>
 <script type="text/javascript" src="/assets/js/scrollToTopBtn.js"></script>
 
+<div class="row between-xs">
+  <div class="col-xs text-right f5 text-italic text-gray-light">
+    <div class="box start-xs">
+    {% if page.tags %} Tags: <u> {{ page.tags | join: "</u>, <u>" }} </u> {% endif %}
+    </div>
+  </div>
+
+  <div class="col-xs text-right f5 text-italic text-gray-light">
+    <div class="box end-xs">
+    {% if page.created %} Posted on {{ page.created | date: "%B %d, %Y" }} {% endif %}
+    </div>
+  </div>
+</div>
 {{ content }}
 
 <!-- utteranc.es comments -->
