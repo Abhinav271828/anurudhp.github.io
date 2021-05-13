@@ -3,7 +3,7 @@ title: Blogs
 layout: blog_index
 ---
 
-{% assign blogs = site.pages | where: "layout", "blog" | where_exp: "page", "page.path contains '.md'" | sort: "created" | reverse %}
+{% assign blogs = site.pages | where: "blog", true | where_exp: "page", "page.path contains '.md'" | sort: "created" | reverse %}
 
 {: reversed="reversed"}
 {% for blog in blogs %}

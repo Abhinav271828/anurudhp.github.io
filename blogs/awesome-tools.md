@@ -1,6 +1,7 @@
 ---
 layout: blog
 created: 2020-12-01
+blog: true
 ---
 
 Awesome Software/Tools for Programming

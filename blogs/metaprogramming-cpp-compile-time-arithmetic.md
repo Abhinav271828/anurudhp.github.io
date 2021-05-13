@@ -1,6 +1,7 @@
 ---
 layout: blog
 created: 2021-03-07
+blog: true
 ---
 
 A calculator in C++ - at compile time!

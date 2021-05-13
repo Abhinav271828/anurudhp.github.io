@@ -1,6 +1,7 @@
 ---
 layout: blog
 created: 2021-02-23
+blog: true
 ---
 
 Sprague-Grundy: Why is it XOR?

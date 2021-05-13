@@ -1,6 +1,7 @@
 ---
 layout: blog_lhs
 created: 2020-10-30
+blog: true
 ---
 
 [Haskell for CP] Introduction and our first problem

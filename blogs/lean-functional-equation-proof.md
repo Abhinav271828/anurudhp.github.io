@@ -1,6 +1,7 @@
 ---
 layout: blog
 created: 2021-02-22
+blog: true
 ---
 
 Solving a functional equation using Lean
