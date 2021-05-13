@@ -1,14 +1,14 @@
 #!/bin/python3
 
 import yaml
-from pathlib import Path, PosixPath
+from pathlib import Path
 from feedgen.feed import FeedGenerator
 import argparse
 import sh
 import logging
 
 # Generate the feed
-def make_feed(feed: FeedGenerator, blogs: [PosixPath]):
+def make_feed(feed: FeedGenerator, blogs: list[Path]):
     feed.title("Anurudh's Blog")
     feed.description("Navigating the manifold of computing")
     feed.author(name='Anurudh Peduri')
@@ -31,7 +31,7 @@ def make_feed(feed: FeedGenerator, blogs: [PosixPath]):
             entry.pubDate(pubDate)
             entry.author(email='Anurudh Peduri')
 
-def read_metadata(src: PosixPath):
+def read_metadata(src: Path):
     try:
         yml_started, yml_ended = False, False
         yml_front = ''
@@ -52,12 +52,12 @@ def read_metadata(src: PosixPath):
                 prev_line = line.strip()
 
         metadata = yaml.safe_load(yml_front)
-        if metadata['layout'] != 'blog': return None
+        if not metadata.get('blog', False): return None
         title = title.replace("\\[", "[")
         title = title.replace("\\]", "]")
         metadata['title'] = title
         return metadata
-    except Exception as e:
+    except Exception:
         logging.warning(f'Warning: ignoring file {src}, failed loading YML metadata')
         return None
 
@@ -73,6 +73,7 @@ def main():
         logging.basicConfig(level=logging.INFO)
 
     blogs = Path(args.blogs_dir).glob('*.md')
+    blogs = list(blogs)
     feed = FeedGenerator()
     make_feed(feed, blogs)
     feed.rss_file(args.output, pretty=True)
