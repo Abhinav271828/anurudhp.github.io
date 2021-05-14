@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+// Fonts
+.markdown-body, header {
+  font-family: 'system-ui' !important;
+}
+
 // color scheme: https://www.materialui.co/colors
 
 .blog-index li {
