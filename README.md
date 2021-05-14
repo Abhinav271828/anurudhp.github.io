@@ -6,8 +6,10 @@ Some theme elements taken from [meghprkh.github.io](https://github.com/meghprkh/
 TODO
 ----
 - [ ] Rewrite introduction
-- [ ] 10: Blogs - Add tags/categories
+- [x] 10: Blogs - Add tags/categories
 - [ ] 15: Blogs - Filter by tag
+- [ ] better header
+  + [Hugo uBlogger Theme](https://ublogger.netlify.app/)
 
 Links
 -----
