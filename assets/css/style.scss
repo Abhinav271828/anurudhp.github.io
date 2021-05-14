@@ -16,7 +16,11 @@
     margin-bottom: 0;
   }
   strong a {
-    font-size: $h3-size;
+    font-size: $h4-size;
+  }
+  .tags {
+    font-style: italic;
+    display: inline;
   }
 }
 

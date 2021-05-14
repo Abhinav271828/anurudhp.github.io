@@ -8,7 +8,7 @@ layout: blog_index
 {: reversed="reversed"}
 {% for blog in blogs %}
 0. **[{{ blog.title }}]({{ blog.url }})**
-   <div class="text-gray f5">Posted on: {{ blog.created | date: "%B %d, %Y" }}
-   {% if blog.tags %} | Tags: <u> {{ blog.tags | join: "</u>, <u>" }} </u> {% endif %}
+   <div class="text-gray f6">{{ blog.created | date: "%B %d, %Y" }}
+   {% if blog.tags %} <b>|</b> <div class="tags"> <u>&#35;{{ blog.tags | join: "</u>, <u>&#35;" }} </u> </div> {% endif %}
    </div>
 {% endfor %}
