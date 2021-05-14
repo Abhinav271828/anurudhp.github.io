@@ -38,23 +38,24 @@ a {
 // Navigation Menu
 .nav-menu-holder {
   background-color: #EEEEEE;
-  padding-top: 5px;
+  padding-top: 1px;
   padding-bottom: 1px;
-  border-bottom: solid;
-  border-width: 1px;
   border-color: #B0BEC5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 #nav-menu {
   font-size: 20px;
-  margin-bottom: 20px;
+  font-weight: 500;
   a {
     color: #2f2f2f;
-    font-weight: 700;
     &:focus, &:hover {
       color: #f09228;
       text-decoration: none;
     }
+  }
+  .active-el {
+    font-weight: 700;
   }
 }
 
