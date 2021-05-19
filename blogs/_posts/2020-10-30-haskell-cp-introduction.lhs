@@ -6,6 +6,8 @@ tags:
 title: "[Haskell for CP] Introduction and our first problem"
 ---
 
+ <!--more-->
+
 Basic Setup
 -----------
 My basic setup is heavily inspired by [Brent Yorgey](https://byorgey.wordpress.com/). First have a look at [this blog](https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/) for the basic template we'll be using.
@@ -21,8 +23,6 @@ main = interact $ _
 ```
 
 There are also a few basic problems at the end of the above blog. I recommend you first try to solve them before attempting the problem that I am presenting.
-
- <!--more-->
 
 Literate Haskell
 ----------------
