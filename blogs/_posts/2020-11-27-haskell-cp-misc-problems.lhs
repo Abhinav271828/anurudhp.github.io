@@ -1,21 +1,20 @@
 ---
 layout: blog_lhs
-created: 2020-11-27
 tags:
   - haskell
   - competitive-programming
+title: "[Haskell for CP] Some Basic Problems"
 ---
 
-[Haskell for CP] Some Basic Problems
-===================
-
-This week I will be discussing a couple of basic problems.
+This week I will be discussing a couple of basic problems: [Repetitions](https://cses.fi/problemset/task/1069) and [GCD on Blackboard](https://atcoder.jp/contests/abc125/tasks/abc125_c)
+  <!--more-->
 
 Let us first pull up some basic imports.
 \begin{code}
 import Control.Arrow ((>>>))
 import Data.List (group, sort)
 \end{code}
+
 
 [Repetitions](https://cses.fi/problemset/task/1069)
 ---------------------------------------------------

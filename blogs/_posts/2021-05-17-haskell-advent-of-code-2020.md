@@ -1,16 +1,12 @@
 ---
 layout: blog
-created: 2021-05-17
 tags:
   - haskell
+title: "Advent Of Code 2020 - in Haskell"
 ---
-
-Advent Of Code 2020 - in Haskell
-================================
-
-A few months ago, I was introduced to the [Advent Of Code](https://adventofcode.com/2020) contest series. The 2020 round has just begun, and looking at the problems from previous years, I felt it would be fun and challenging to program them in Haskell. And so I got to work and got 40 out of 50 stars at the end. This was incredibly fun, and surprisingly difficult at certain stages, and I want to share my thoughts with others.
-
+A few months ago, I was introduced to the [Advent Of Code](https://adventofcode.com/2020) contest series. The 2020 round has just begun, and looking at the problems from previous years, I felt it would be fun and challenging to program them in Haskell. And so I got to work and got 40 out of 50 stars at the end. This was incredibly fun, and surprisingly difficult at certain stages, and I want to share my thoughts with others.  
 I have put up my [solutions on GitHub](https://github.com/anurudhp/AdventOfCode2020).
+<!--more-->
 
 Elegant Solutions
 -----------------

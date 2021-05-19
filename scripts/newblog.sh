@@ -2,9 +2,7 @@
 
 echo "---"
 echo "layout: blog"
-echo "created: $(date -I)"
-echo "blog: false"
+echo "title: TITLE HERE"
 echo "---"
 echo
-echo "<TITLE HERE>"
-echo "============"
+echo "<!--more-->"

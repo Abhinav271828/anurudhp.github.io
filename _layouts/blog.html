@@ -1,22 +1,8 @@
 ---
 layout: page
 ---
-<!-- mathjax: from http://csega.github.io/mypost/2017/03/28/how-to-set-up-mathjax-on-jekyll-and-github-properly.html -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { availableFonts: ["TeX"] }
-  });
-</script>
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+
+{% include mathjax.html %}
 
 <div class="scrollBtn"><a id="scrollToTopBtn">
   <svg width="32" height="32" viewBox="0 0 100 100">
@@ -47,7 +33,7 @@ layout: page
 
   <div class="col-xs text-right f5 text-italic text-gray-light">
     <div class="box end-xs">
-    {% if page.created %} Posted on {{ page.created | date: "%B %d, %Y" }} {% endif %}
+    {% if page.date %} Posted on {{ page.date | date: "%B %d, %Y" }} {% endif %}
     </div>
   </div>
 </div>

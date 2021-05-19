@@ -3,7 +3,7 @@ import sh
 from pathlib import Path
 
 tags = []
-for blog in Path('blogs/').glob('*.md'):
+for blog in Path('blogs/').glob('**/*.md'):
     data = frontmatter.load(blog)
     if 'tags' in data:
         tags += data['tags']

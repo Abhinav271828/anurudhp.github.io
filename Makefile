@@ -2,7 +2,7 @@
 all: haskell_blogs feed.rss tags
 
 ### Haskell Blogs from LHS
-LITERATE_HASKELL_SRCS := $(wildcard blogs/*.lhs)
+LITERATE_HASKELL_SRCS := $(wildcard blogs/**/*.lhs)
 LITERATE_HASKELL_STUBS := $(patsubst %.lhs,%,$(LITERATE_HASKELL_SRCS))
 LITERATE_HASKELL_BLOGS := $(patsubst %.lhs,%.md,$(LITERATE_HASKELL_SRCS))
 

@@ -1,24 +1,27 @@
 ---
 layout: blog_lhs
-created: 2021-05-12
 tags:
   - haskell
   - competitive-programming
+title: "[Haskell for CP] Exploiting laziness for memoized DPs"
 ---
 
-[Haskell for CP] Exploiting laziness for memoized DPs
-============
+## Problem
 
-Problem
--------
-[Partition Problem](https://en.wikipedia.org/wiki/Partition_(number_theory)) - Compute the number of partitions for a given integer $n$ - ways of writing n as a sum of positive integers. Two sums that differ only in the order of their summands are considered the same partition.
+[Partition
+Problem](https://en.wikipedia.org/wiki/Partition_(number_theory)) -
+Compute the number of partitions for a given integer $n$ - ways of
+writing n as a sum of positive integers. Two sums that differ only in
+the order of their summands are considered the same partition.
+<!--more-->
 
-Solution
---------
+## Solution
+
 This is a fairly standard problem, solved using a recurrence.
 
-Let $P(n, x)$ be the number of partitions of $n$, such that the smallest element in it is $x$.
-We define this recurrence for $n \geq 1$ and $x \geq 1$.
+Let $P(n, x)$ be the number of partitions of $n$, such that the smallest
+element in it is $x$. We define this recurrence for $n \geq 1$ and
+$x \geq 1$.
 
 $$
 P(n, x) \equiv
@@ -31,11 +34,11 @@ $$
 
 Note: An empty summation is $0$.
 
-Counting
---------
+## Counting
 
 We define a list of lists $dp$, to store the computed values.
-\begin{code}
+
+``` haskell
 -- a "two dimensional" memory/array; realized as a list of lists.
 type Mem2D a = [[a]]
 
@@ -50,21 +53,26 @@ getP n x = dp !! n !! x -- extract the corresponding element
 -- #partitions of n
 partitions :: Int -> Integer
 partitions n = sum $ dp !! n
-\end{code}
+```
 
-Notice that $dp$ here is not a function, just a global constant list! But unlike usual programming languages, we can give Haskell a recipe to compute the elements of the list, which in turn can use previous elements. This works because Haskell is lazily evaluated.
+Notice that $dp$ here is not a function, just a global constant list!
+But unlike usual programming languages, we can give Haskell a recipe to
+compute the elements of the list, which in turn can use previous
+elements. This works because Haskell is lazily evaluated.
 
-Implementation trick: We only store non-trival values. The zeros (for the $x > n$ case) are not stored.  
+Implementation trick: We only store non-trival values. The zeros (for
+the $x > n$ case) are not stored.\
 To compute `dp[n][x]`, we implement the above recurrence:
 
-```haskell
+``` haskell
 sum -- Add all the values, i.e. dp[n - x][x ..]
   $ drop x -- drop the first x values. i.e. dp[n - x][0 .. x - 1]
     $ dp !! (n - x) -- Take dp[n - x]
 ```
 
 Now let us put this together and build the entire $dp$ list.
-\begin{code}
+
+``` haskell
 dp =
   [] : -- dp[0]
   [ 0 : -- dp[n][0] (padding, unused)
@@ -74,13 +82,15 @@ dp =
     ++ [1] -- dp[n][n]
   | n <- [1 ..]
   ]
-\end{code}
+```
 
-That is it! Just a few lines to compute all the dp values! In Haskell, when a list is forced, it either evaluates to `[]` or to `x : xs`,
-where `xs` is not forced yet. So the computation forces one element at a time, which nicely preserves the order of computation.
-This ensures that the `dp` results for smaller $n$ values are computed first.
+That is it! Just a few lines to compute all the dp values! In Haskell,
+when a list is forced, it either evaluates to `[]` or to `x : xs`, where
+`xs` is not forced yet. So the computation forces one element at a time,
+which nicely preserves the order of computation. This ensures that the
+`dp` results for smaller $n$ values are computed first.
 
-```haskell
+``` haskell
 ghci> take 5 dp
 [[],[0,1],[0,1,1],[0,2,0,1],[0,3,1,0,1]]
 ghci> dp !! 6
@@ -91,14 +101,16 @@ ghci> partitions 5
 6
 ```
 
-Bonus: Compute all partitions
------------------------------
+## Bonus: Compute all partitions
 
-We can extend the above code to not just count the partitions, but to actually compute all of them.
-Instead of adding up the subproblem counts, we take the subproblem partition lists, and prepend the current element $x$ to it.
+We can extend the above code to not just count the partitions, but to
+actually compute all of them. Instead of adding up the subproblem
+counts, we take the subproblem partition lists, and prepend the current
+element $x$ to it.
 
 First, let us declare some types and the `sequences` array.
-\begin{code}
+
+``` haskell
 type Partition = [Int] -- A single partition, just a list.
 type Partitions = [Partition] -- A collection of partitions.
 
@@ -108,10 +120,12 @@ sequences :: Mem2D Partitions
 -- collect all partitions of n
 allPartitions :: Int -> Partitions
 allPartitions n = concat $ sequences !! n
-\end{code}
+```
 
-To compute all partitions of $n$ with smallest value $x$, we write something similar:
-```haskell
+To compute all partitions of $n$ with smallest value $x$, we write
+something similar:
+
+``` haskell
 map (x :) -- prepend `x` to each of those partitions
   -- now we have a big list of all partitions of `n - x`, starting with any y >= x
   $ concat -- concatenate all the lists corresponding to different starting values
@@ -121,7 +135,8 @@ map (x :) -- prepend `x` to each of those partitions
 ```
 
 Putting it together:
-\begin{code}
+
+``` haskell
 sequences =
   [] : -- partitions of 0 (empty, just for padding)
   [ [] : -- partitions of n starting with 0 (empty, just for padding)
@@ -131,10 +146,11 @@ sequences =
     ++ [[[n]]] -- partitions of n starting with n - only one partition: (n)
   | n <- [1 ..]
   ]
-\end{code}
+```
 
 A few example values evaluated in the interpreter:
-```haskell
+
+``` haskell
 ghci> take 5 sequences
 [[],
  [[],[[1]]],

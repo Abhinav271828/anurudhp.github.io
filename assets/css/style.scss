@@ -26,15 +26,32 @@
 
 // color scheme: https://www.materialui.co/colors
 
-.blog-index li {
-  > p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  strong a {
-    font-size: $h4-size;
+.blog-index {
+  .blog-summary {
+    padding-bottom: 1em;
+    border-bottom: 1px dashed #dadada;
+
+    .blog-title {
+      margin-bottom: 0;
+      border-bottom: none;
+      text-decoration: underline;
+      text-decoration-color: blue;
+    }
+    .blog-meta {
+      margin-bottom: 10px;
+      .blog-date {
+        color: #586069;
+      }
+      .tags {
+        float: right;
+      }
+    }
+    .read-more {
+      display: inline;
+    }
   }
 }
+
 .tags {
   font-style: italic;
   display: inline;

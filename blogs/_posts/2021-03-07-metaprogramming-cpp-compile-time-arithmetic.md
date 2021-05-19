@@ -1,15 +1,13 @@
 ---
 layout: blog
-created: 2021-03-07
 tags:
   - c++
   - metaprogramming
+title: "A calculator in C++ - at compile time!"
 ---
 
-A calculator in C++ - at compile time!
-============
-
 Calculator programs are usually one of the first practice programs people implement. And writing a basic one in c++ is pretty straightforward. But today, I'll demonstrate how to use your compiler (say `gcc` or `clang`) as a calculator!
+<!--more-->
 
 Extremely strong typing
 -----------------------

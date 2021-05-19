@@ -1,18 +1,16 @@
 ---
 layout: blog
-created: 2021-02-22
 tags:
  - theorem-proving
  - lean
+title: "Solving a functional equation using Lean"
 ---
-
-Solving a functional equation using Lean
-========================================
 
 Here is a problem from the [2019 Brazil Undergrad MO](https://artofproblemsolving.com/community/c1018411_2019_brazil_undergrad_mo):  
 > Find all functions $$f: \mathbb{R} \rightarrow \mathbb{R}$$ satisfying $$ f(x f(y) + f(x)) + f(y^2) = f(x) + y f(x + y)$$
 
 I was curious to see if I could formalize and prove/verify this in [Lean](https://leanprover.github.io/), so here goes.
+<!--more-->
 
 Preparation
 -----------

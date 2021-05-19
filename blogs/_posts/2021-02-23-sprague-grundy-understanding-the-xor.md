@@ -1,17 +1,15 @@
 ---
 layout: blog
-created: 2021-02-23
 tags:
   - game-theory
   - algebra
+title: "Sprague-Grundy: Why is it XOR?"
 ---
-
-Sprague-Grundy: Why is it XOR?
-============
 
 I have always wondered why the _correct_ way to combine [nim games](https://en.wikipedia.org/wiki/Sprague%E2%80%93Grundy_theorem) is taking the XOR of their grundy numbers. But never got around to learning the theory behind it.
 
 Recently, I had a very enlightening conversation with [Siddharth Bhat](https://bollu.github.io). He showed me a very simple and elegant proof for this.
+<!--more-->
 
 Definitions
 -----------

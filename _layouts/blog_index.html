@@ -1,40 +1,44 @@
 ---
 layout: page
 ---
+{% include mathjax.html %}
+
 {{ content }}
 
-{% assign blogs = site.categories.blogs %}
-{% if page.name != "index.md" %}
+{% assign blogs = site.categories.blogs | where: "ext", ".md" %}
+{% if page.url contains 'tags' %}
   {% assign tag_filter = page.name | remove: ".md" %}
   {% assign blogs = blogs | where_exp: "blog", "blog.tags contains tag_filter" %}
   <h2><a href="">&#35;{{ tag_filter }}</a></h2>
 {% endif %}
 
 <div class="blog-index">
-  <ol reversed="reversed">
   {% for blog in blogs %}
-    <li>
-      <strong><a href="{{blog.url}}">{{ blog.title }}</a></strong>
-      <div class="text-gray f6">{{ blog.date | date: "%B %d, %Y" }}
-      {% assign tags = blog.tags | prepend: "&#35;" %}
-      {% if blog.tags %}
-        <b>|</b>
-        <div class="tags">
+  <div class="blog-summary">
+    <h2 class="blog-title"><a href="{{blog.url}}">{{ blog.title }}</a></h2>
+    <div class="blog-meta row between-xs">
+      <div class="col-xs">
+        <div class="box blog-date">{{ blog.date | date: "%B %d, %Y" }}</div>
+      </div>
+      <div class="col-xs">
+        {% assign tags = blog.tags | prepend: "&#35;" %}
+        {% if blog.tags %}
+        <div class="box tags">
           {% assign remaining = blog.tags.size %}
           {% for tag in blog.tags %}
-            <u><a href="/blogs/tags/{{ tag }}">&#35;{{ tag }}</a></u>{% if remaining != 1 %},{% endif %}
-            {% assign remaining = remaining | minus: 1 %}
+          <u><a href="/blogs/tags/{{ tag }}">&#35;{{ tag }}</a></u>{% if remaining != 1 %},{% endif %}
+          {% assign remaining = remaining | minus: 1 %}
           {% endfor %}
         </div>
-      {% endif %}
+        {% endif %}
       </div>
-      <div class="excerpt">
-        {{ blog.excerpt }}
-        <a href="{{ blog.url }}">Read more...</a>
-      </div>
-    </li>
+    </div>
+    <div class="excerpt">
+      {{ blog.excerpt }}
+      <a class="read-more" href="{{ blog.url }}">Read more...</a>
+    </div>
+  </div>
   {% endfor %}
-  </ol>
 </div>
 
 <div class="center">

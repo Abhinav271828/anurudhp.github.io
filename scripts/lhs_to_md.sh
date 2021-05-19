@@ -25,4 +25,5 @@ sed -i 's#{.haskell .literate}#haskell#g' $output
 sed -i 's#{.literate .haskell}#haskell#g' $output
 sed -i 's#{.haskell}#haskell#g' $output
 sed -i 's/^\\#\\#\\#/###/g' $output
+sed -i 's/`<!--more-->`{=html}/<!--more-->/g' $output
 
