@@ -11,8 +11,10 @@
           <div class="row around-xs around-sm">
             {% for page_info in site.data.nav %}
               <div class="col-xs col-sm-1">
-                <div class="box {% if page.title == page_info.title %} active-el {% endif %}">
-                  <a href="{{ page_info.url | relative_url }}" class="nav-item">{{ page_info.title}}</a>
+                <div class="box {% if page.url contains page_info.url %} active-el {% endif %}">
+                  <a href="{{ page_info.url | relative_url }}" class="nav-item" {% if page.new_tab %}target="_blank"{% endif %}>
+                    {{ page_info.title }}
+                  </a>
                 </div>
               </div>
             {% endfor %}
