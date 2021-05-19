@@ -6,6 +6,11 @@ tags:
 title: "[Haskell for CP] Exploiting laziness for memoized DPs"
 ---
 
+In this blog I attempt to solve the [Partition
+Problem](https://en.wikipedia.org/wiki/Partition_(number_theory)) using
+Haskell. The key is to utilize laziness to cleanly express the standard
+dynamic-programming solution for the problem. <!--more-->
+
 ## Problem
 
 [Partition
@@ -13,7 +18,6 @@ Problem](https://en.wikipedia.org/wiki/Partition_(number_theory)) -
 Compute the number of partitions for a given integer $n$ - ways of
 writing n as a sum of positive integers. Two sums that differ only in
 the order of their summands are considered the same partition.
-<!--more-->
 
 ## Solution
 
