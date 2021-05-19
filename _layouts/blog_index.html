@@ -15,15 +15,22 @@ layout: page
   {% for blog in blogs %}
     <li>
       <strong><a href="{{blog.url}}">{{ blog.title }}</a></strong>
-      <div class="text-gray f6">{{ blog.created | date: "%B %d, %Y" }}
+      <div class="text-gray f6">{{ blog.date | date: "%B %d, %Y" }}
       {% assign tags = blog.tags | prepend: "&#35;" %}
-      {% if blog.tags %} <b>|</b> <div class="tags">
-        {% assign remaining = blog.tags.size %}
-        {% for tag in blog.tags %}
-          <u><a href="/blogs/tags/{{ tag }}">&#35;{{ tag }}</a></u>{% if remaining != 1 %},{% endif %}
-          {% assign remaining = remaining | minus: 1 %}
-        {% endfor %}
-      </div> {% endif %}
+      {% if blog.tags %}
+        <b>|</b>
+        <div class="tags">
+          {% assign remaining = blog.tags.size %}
+          {% for tag in blog.tags %}
+            <u><a href="/blogs/tags/{{ tag }}">&#35;{{ tag }}</a></u>{% if remaining != 1 %},{% endif %}
+            {% assign remaining = remaining | minus: 1 %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      </div>
+      <div class="excerpt">
+        {{ blog.excerpt }}
+        <a href="{{ blog.url }}">Read more...</a>
       </div>
     </li>
   {% endfor %}
