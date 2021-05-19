@@ -1,7 +1,6 @@
 ---
 layout: blog_lhs
 created: 2020-10-30
-blog: true
 tags:
   - haskell
   - competitive-programming

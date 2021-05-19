@@ -1,7 +1,6 @@
 ---
 layout: blog
 created: 2021-05-17
-blog: true
 tags:
   - haskell
 ---

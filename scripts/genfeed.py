@@ -52,7 +52,8 @@ def read_metadata(src: Path):
                 prev_line = line.strip()
 
         metadata = yaml.safe_load(yml_front)
-        if not metadata.get('blog', False): return None
+        if metadata['layout'] == 'blog_index': return None
+        if metadata.get('draft', False): return None
         title = title.replace("\\[", "[")
         title = title.replace("\\]", "]")
         metadata['title'] = title
