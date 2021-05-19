@@ -8,8 +8,20 @@
   font-family: 'Cairo', sans-serif;
 }
 
-// 404
-.back-button {
+// profile pic
+.profile-pic img {
+  float: right;
+  margin: 25px 0 25px 25px;
+  max-width: 100%;
+  width: 150px;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 50rem) {
+  .profile-pic img {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
 }
 
 // color scheme: https://www.materialui.co/colors
@@ -78,23 +90,26 @@ a {
 }
 
 // Footer Menu
-.footer .row {
-  p {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    border-right: solid;
-    border-width: 2px;
-    font-size: small;
-    &:last-child {
-      border-right: none;
+.footer {
+  clear: both;
+  .row {
+    p {
+      padding-right: 0.5em;
+      padding-left: 0.5em;
+      border-right: solid;
+      border-width: 2px;
+      font-size: small;
+      &:last-child {
+        border-right: none;
+      }
     }
-  }
-  img {
-    height: 1em;
-  }
-  .footer-links {
-    padding-left: 1px;
-    padding-right: 1px;
+    img {
+      height: 1em;
+    }
+    .footer-links {
+      padding-left: 1px;
+      padding-right: 1px;
+    }
   }
 }
 
