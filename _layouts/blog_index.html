@@ -3,7 +3,7 @@ layout: page
 ---
 {{ content }}
 
-{% assign blogs = site.pages | where_exp: "page", "page.layout contains 'blog'" | where_exp: "page", "page.layout != 'blog_index'" | where_exp: "page", "page.path contains '.md'" | sort: "created" | reverse %}
+{% assign blogs = site.categories.blogs %}
 {% if page.name != "index.md" %}
   {% assign tag_filter = page.name | remove: ".md" %}
   {% assign blogs = blogs | where_exp: "blog", "blog.tags contains tag_filter" %}
@@ -13,7 +13,6 @@ layout: page
 <div class="blog-index">
   <ol reversed="reversed">
   {% for blog in blogs %}
-  {% unless blog.draft %}
     <li>
       <strong><a href="{{blog.url}}">{{ blog.title }}</a></strong>
       <div class="text-gray f6">{{ blog.created | date: "%B %d, %Y" }}
@@ -27,7 +26,6 @@ layout: page
       </div> {% endif %}
       </div>
     </li>
-    {% endunless %}
   {% endfor %}
   </ol>
 </div>
