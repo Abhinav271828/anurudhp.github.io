@@ -4,7 +4,7 @@ created: 2020-10-30
 blog: true
 tags:
   - haskell
-  - competitive programming
+  - competitive-programming
 ---
 
 [Haskell for CP] Introduction and our first problem

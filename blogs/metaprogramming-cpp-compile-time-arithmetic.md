@@ -2,6 +2,9 @@
 layout: blog
 created: 2021-03-07
 blog: true
+tags:
+  - c++
+  - metaprogramming
 ---
 
 A calculator in C++ - at compile time!
