@@ -1,6 +1,5 @@
 ---
 layout: blog_lhs
-title: \[Haskell for CP\] Some Basic Problems
 created: 2020-11-27
 blog: true
 tags:
