@@ -1,5 +1,5 @@
 # All
-all: haskell_blogs feed.rss
+all: haskell_blogs feed.rss tags
 
 ### Haskell Blogs from LHS
 LITERATE_HASKELL_SRCS := $(wildcard blogs/*.lhs)
@@ -17,3 +17,9 @@ $(LITERATE_HASKELL_BLOGS): %.md: %.lhs scripts/lhs_to_md.sh scripts/getYAMLMetad
 BLOG_SRCS := $(wildcard blogs/*.md)
 feed.rss: $(BLOG_SRCS) ./scripts/genfeed.py
 	python ./scripts/genfeed.py -b blogs -o $@
+
+### Tags
+tags: $(BLOG_SRCS)
+	python ./scripts/generate-all-tags.py
+
+.PHONY: tags
