@@ -2,8 +2,9 @@
   url: /blogs/
 
 - title: Interests
-  url: /About.html
+  url: /Interests.html
 
 - title: CV
   url: files/CV.pdf
+  new_tab: true
 
