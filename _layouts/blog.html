@@ -35,7 +35,13 @@ layout: page
 <div class="row between-xs">
   <div class="col-xs text-right f5 text-italic text-gray-light">
     <div class="box start-xs">
-    {% if page.tags %} Tags: <u> {{ page.tags | join: "</u>, <u>" }} </u> {% endif %}
+    {% if page.tags %} Tags: <div class="tags">
+      {% assign remaining = page.tags.size %}
+      {% for tag in page.tags %}
+        <u><a href="/blogs/tags/{{ tag }}">&#35;{{ tag }}</a></u>{% if remaining != 1 %},{% endif %}
+        {% assign remaining = remaining | minus: 1 %}
+      {% endfor %}
+    </div> {% endif %}
     </div>
   </div>
 
