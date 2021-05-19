@@ -1,1 +1,14 @@
-[#haskell](./haskell)
+---
+layout: page
+---
+
+All Blog Tags
+-------------
+
+{% assign tags = site.pages | where_exp: "page", "page.url contains 'blogs/tags'" | map: "name" | sort %}
+<div class="tags">
+{% for tag in tags %}
+  {% assign tagg = tag | remove: '.md' %}
+  <div class="tag"><a href="./{{ tagg }}">&#35;{{ tagg }}</a></div>,
+{% endfor %}
+</div>

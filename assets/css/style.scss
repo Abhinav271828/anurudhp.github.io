@@ -22,13 +22,20 @@
   strong a {
     font-size: $h4-size;
   }
-  .tags {
-    font-style: italic;
+}
+.tags {
+  font-style: italic;
+  display: inline;
+  .tag {
     display: inline;
+    text-decoration: underline;
   }
 }
 .tags a {
   color: #586069;
+}
+.center {
+  text-align: center;
 }
 
 .markdown-body blockquote {
