@@ -41,6 +41,7 @@ layout: page
 <h1>{{ page.title }}</h1>
 {{ content }}
 
+{% unless page.draft %}
 <!-- utteranc.es comments -->
 <div class="border-top border-gray">
 <script src="https://utteranc.es/client.js"
@@ -52,4 +53,5 @@ layout: page
   async>
 </script>
 </div>
+{% endunless %}
 
