@@ -4,6 +4,8 @@ theme: jekyll-theme-primer
 markdown: kramdown
 kramdown:
   math_engine: mathjax
+  # parse markdown inside HTML tags
+  parse_block_html: true
 
 defaults:
   -
