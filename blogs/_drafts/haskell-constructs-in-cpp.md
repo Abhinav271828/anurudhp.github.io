@@ -23,10 +23,58 @@ Before we dive deep, it is good to rewrite some simple concepts - such as standa
 
 <div class="row"><div class="col-xs-12 col-sm-6">
 ```haskell
+-- haskell
 type Int
+type Char
+type Float
 ```
 </div><div class="col-xs-12 col-sm-6">
 ```c++
+// c++
 struct Int { int value; }
+struct Char { char value; }
+struct Float { float value; }
+```
+</div></div>
+
+I wrapped the `c++` primitive types for naming consistency.
+
+### Parametrized Types
+
+<div class="row"><div class="col-xs-12 col-sm-6">
+```haskell
+type List a
+  = Nil
+  | Cons a (List a)
+```
+</div><div class="col-xs-12 col-sm-6">
+```c++
+template<typename A>
+struct List { std::stack<A> value; }
+
+template<typename A>
+List<A> Nil() { return List<A>(); }
+
+template<typename A>
+List<A> Cons(A a, List<A> ls) {
+  ls.value.push(a);
+  return ls;
+}
+```
+</div></div>
+
+_Note: I picked `std::stack` instead of `std::vector` as it resembles the `List` structure better._
+
+For ease of implementation, all objects are passed by value by making copies. This is inefficient, but captures the semantics correctly.
+
+<div class="row"><div class="col-xs-12 col-sm-6">
+```haskell
+ls :: List Int
+ls = Cons 1 (Cons 2 (Cons 3 Nil))
+```
+</div><div class="col-xs-12 col-sm-6">
+```c++
+List<Int>
+ls = Cons(1, Cons(2, Cons(3, Nil<Int>())));
 ```
 </div></div>
