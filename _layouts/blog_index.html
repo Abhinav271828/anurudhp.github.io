@@ -5,7 +5,7 @@ layout: page
 
 {{ content }}
 
-{% assign blogs = site.categories.blogs | where: "ext", ".md" %}
+{% assign blogs = site.categories.blogs %}
 {% if page.url contains 'tags' %}
   {% assign tag_filter = page.name | remove: ".md" %}
   {% assign blogs = blogs | where_exp: "blog", "blog.tags contains tag_filter" %}
