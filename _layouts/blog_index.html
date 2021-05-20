@@ -18,7 +18,7 @@ layout: page
     <h2 class="blog-title"><a href="{{blog.url}}">{{ blog.title }}</a></h2>
     <div class="blog-meta row between-xs">
       <div class="col-xs">
-        <div class="box blog-date">{{ blog.date | date: "%B %d, %Y" }}</div>
+        <div class="box blog-date">{{ blog.date | date: "%B %d, %Y" }} {% if blog.draft %}<b>(DRAFT)</b>{%endif%}</div>
       </div>
       <div class="col-xs">
         {% assign tags = blog.tags | prepend: "&#35;" %}
