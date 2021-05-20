@@ -14,8 +14,10 @@ defaults:
       excerpt_separator: "<!--more-->"
 
 exclude:
-  - README.md
-  - scripts
-  - Makefile
   - .vs
   - vendor
+  - scripts
+  - Makefile
+  - README.md
+  - TODOS.md
+  - blogs/**/*.lhs
