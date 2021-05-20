@@ -1,11 +1,17 @@
 title: Anurudh Peduri
-
 theme: jekyll-theme-primer
+plugins:
+  - jekyll-feed
+
+# markdown processing
 markdown: kramdown
 kramdown:
   math_engine: mathjax
   # parse markdown inside HTML tags
   parse_block_html: true
+
+# rss feed
+author: "Anurudh Peduri"
 
 defaults:
   -
